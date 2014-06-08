@@ -12,7 +12,7 @@ plotset$Global_active_power <- as.numeric(as.character(plotset$Global_active_pow
 
 #write to file directly to avoid copy issues
 
-png(file = "plot1.png", width = 480, height = 480, units = "px")
+png(file = "figure/plot1.png", width = 480, height = 480, units = "px")
 
 hist(plotset$Global_active_power,
 xlab = "Global Active Power (kilowatts)",

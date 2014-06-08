@@ -17,7 +17,7 @@ plotset$Sub_metering_1 <- as.numeric(as.character(plotset$Sub_metering_1))
 plotset$Sub_metering_2 <- as.numeric(as.character(plotset$Sub_metering_2))
 plotset$Sub_metering_3 <- as.numeric(as.character(plotset$Sub_metering_3))
 
-png(file = "plot3.png", width = 480, height = 480, units = "px")
+png(file = "figure/plot3.png", width = 480, height = 480, units = "px")
 
 with(plotset, plot(Time, Sub_metering_1, ylab = "Energy sub metering",
                    xlab = "",

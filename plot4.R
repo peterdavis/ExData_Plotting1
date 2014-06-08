@@ -27,7 +27,7 @@ plotset$Voltage <- as.numeric(as.character(plotset$Voltage))
 
 
 # write output directly to file
-png(file = "plot4.png", width = 480, height = 480, units = "px")
+png(file = "figure/plot4.png", width = 480, height = 480, units = "px")
 
 par(mfrow=c(2,2))
 

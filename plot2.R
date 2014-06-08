@@ -19,7 +19,7 @@ plotset$Global_active_power <- as.numeric(as.character(plotset$Global_active_pow
 
 
 
-png(file = "plot2.png", width = 480, height = 480, units = "px")
+png(file = "figure/plot2.png", width = 480, height = 480, units = "px")
 
 
 plot(plotset$Time, plotset$Global_active_power,
