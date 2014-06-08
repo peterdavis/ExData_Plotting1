@@ -6,18 +6,24 @@ plotData <- read.table("household_power_consumption.txt", header=TRUE, sep = ";"
 
 plotData$Date <- as.Date(plotData$Date, format = "%d/%m/%Y")
 
-plotData$Time <- strptime(plotData$Time, format = "%H:%M:%S")
+plotset <- plotData[plotData$Date == "2007-02-01" | plotData$Date == "2007-02-02",]
 
-plotset <- plotData[plotData$Date == "2007-02-01",]
-plotset <- rbind(plotset, plotData[plotData$Date == "2007-02-02",])
+plotset$Global_active_power <- as.numeric(as.character(plotset$Global_active_power))
 
-plotset$Global_active_power <- as.numeric(plotset$Global_active_power)
+#write to file directly to avoid copy issues
 
-hist(plotset$Global_active_power/1000,
+png(file = "plot1.png", width = 480, height = 480, units = "px")
+
+hist(plotset$Global_active_power,
 xlab = "Global Active Power (kilowatts)",
 col = "red",
 main = "Global Active Power"
 )
 
-dev.copy(png, file = "plot1.png")
+# dev.copy(png, file = "plot1.png", width = 480, height = 480, units = "px")
+
+
+
+
+
 dev.off()
